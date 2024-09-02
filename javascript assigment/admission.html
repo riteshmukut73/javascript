@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="admissionForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="admissionEmail" name="email" required>
+        <br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <br>
+
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+          <option value="">Select Course</option>
+          <option value="BCS"> BACHLOR Computer Science</option>
+          <option value="BCA">BACHLOR COMPUTER APPLICATION</option>
+          <option value="MBA">MASTER OF BUSINESS ADMINISTRATION</option>
+          <option value="MCA">MASTER OF COMPUTER APPLICATION</option>
+        </select>
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('admissionForm').addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value;
+            const dob = document.getElementById('dob').value;
+            const email = document.getElementById('admissionEmail').value;
+            const phone = document.getElementById('phone').value;
+            const course = document.getElementById('course').value;
+
+            if (name === "" || dob === "" || email === "" || phone === "" || course === "") {
+                alert("All fields are required!");
+                event.preventDefault();
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
